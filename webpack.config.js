@@ -16,7 +16,7 @@ module.exports = {
      * entries for raw js files (source)
      */
     entry: {
-        block: path.resolve(__dirname, 'src/causiq.js'),
+        que: path.resolve(__dirname, 'src/causiq.js'),
     },
     /**
      * output folder,
