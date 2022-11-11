@@ -1,0 +1,71 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /home/nick/.local/bin:/home/nick/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/nick/.rvm/bin:/home/nick/.rvm/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/nick/Desktop/local_dev/c_work/js_js/package.json: Unexpected token } in JSON at position 1134
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "a_web",
+    "version": "1.0.0",
+    "description": "A webpack project to demonstrate better FE performance and developer experience",
+    "main": "index.js",
+    "keywords": [
+      "webpack",
+      "babel",
+      "polyfill",
+      "front end performance"
+    ],
+    "repository": "https://github.com/flaircore/a_web.git",
+    "author": "Nickbahson <nijoba33@gmail.com> (https://flaircore.com/)",
+    "license": "MIT",
+    "scripts": {
+      "build-dev": "webpack",
+      "watch": "webpack --watch --progress",
+      "build": "cross-env NODE_ENV=production webpack"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.17.9",
+      "@babel/preset-env": "^7.16.11",
+      "@popperjs/core": "^2.11.5",
+      "@squoosh/lib": "^0.4.0",
+      "babel-loader": "^8.2.5",
+      "cross-env": "^7.0.3",
+      "css-loader": "^6.7.1",
+      "image-minimizer-webpack-plugin": "^3.2.3",
+      "mini-css-extract-plugin": "^2.6.0",
+      "postcss": "^8.4.12",
+      "postcss-loader": "^6.2.1",
+      "postcss-preset-env": "^7.4.3",
+      "sass": "^1.49.11",
+      "sass-loader": "^12.6.0",
+      "webpack": "^5.72.1",
+      "webpack-cli": "^4.9.2"
+    },
+    "dependencies": {
+      "core-js": "^3.22.4",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
