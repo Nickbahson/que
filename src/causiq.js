@@ -12,17 +12,6 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
     const moniker = searchParams.get('moniker')
     const trackUrl = searchParams.get('trackUrl')
 
-
-    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
-    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
-    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
-    console.log(srcUri)
-    console.log(moniker)
-    console.log(trackUrl)
-    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
-    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
-    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
-
     const transport = new BatchedTransport(1000, sendWithFetch(trackUrl))
     const client = new Causiq(transport);
     client.init(moniker, null, uniqueId)
