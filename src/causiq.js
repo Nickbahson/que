@@ -11,12 +11,14 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
     const moniker = searchParams.get('moniker')
 
 
-    console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
-    console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
+    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
+    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
+    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
     console.log(srcUri)
     console.log(moniker)
-    console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
-    console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
+    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
+    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
+    console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
 
     const transport = new BatchedTransport(1000, sendWithFetch("http://localhost:3001/v1/track"))
     const client = new Causiq(transport);
