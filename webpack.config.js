@@ -1,5 +1,3 @@
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const MiniCSSExtractPlugin = require("mini-css-extract-plugin")
 const path = require("path")
 
 let mode = "development",
@@ -37,7 +35,6 @@ module.exports = {
      * https://webpack.js.org/configuration/plugins/
      */
     plugins: [
-        new MiniCSSExtractPlugin()
     ],
 
     /**
@@ -45,15 +42,6 @@ module.exports = {
      */
     module: {
         rules: [
-            {
-                test: /\.(sc|c)ss$/i,
-                use:[
-                    MiniCSSExtractPlugin.loader,
-                    "css-loader",
-                    "postcss-loader",
-                    "sass-loader"
-                ]
-            },
             {
                 test: /\.(js|jsx)$/i,
                 exclude: /node_modules/,
@@ -66,19 +54,6 @@ module.exports = {
                 type: "asset"
             },
         ]
-    },
-    optimization: {
-        minimizer: [
-            "...",
-            new ImageMinimizerPlugin({
-                minimizer: {
-                    implementation: ImageMinimizerPlugin.squooshMinify,
-                    options: {
-                        // Your options for `squoosh`
-                    },
-                },
-            }),
-        ],
     },
   resolve: {
     extensions: ['.js', '.ts']
