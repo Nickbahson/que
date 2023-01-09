@@ -14,7 +14,7 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
 
     const moniker = 'test'
     const transport = new BatchedTransport(1000, sendWithFetch("http://localhost:3001/v1/track"))
-    const c = new Causiq(transport);
+    const client = new Causiq(transport);
     client.init(moniker, null, uniqueId)
 
 })()
