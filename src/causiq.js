@@ -13,6 +13,7 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
 
     console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
     console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
+    console.log(srcUri)
     console.log(moniker)
     console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
     console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
