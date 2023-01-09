@@ -3,10 +3,8 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
 (function (  ) {
     'use strict'
 
-    function uniqueId() {
-        return document.cookie.split(';')
-            .filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')
-    }
+    const uniqueId =
+        document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')
 
     console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
     console.log("++++++++++++++++++ document.currentScript.src +++++++++++++++")
