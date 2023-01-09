@@ -7,7 +7,8 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
         document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')
 
     const srcUri = document.currentScript.src
-    const searchParams = new URLSearchParams(srcUri);
+    const url = new URL(srcUri);
+    const searchParams = new URLSearchParams(url.search);
     const moniker = searchParams.get('moniker')
     const trackUrl = searchParams.get('trackUrl')
 
