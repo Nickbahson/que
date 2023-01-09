@@ -9,6 +9,7 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
     const srcUri = document.currentScript.src
     const searchParams = new URLSearchParams(srcUri);
     const moniker = searchParams.get('moniker')
+    const trackUrl = searchParams.get('trackUrl')
 
 
     console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
@@ -16,11 +17,12 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
     console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
     console.log(srcUri)
     console.log(moniker)
+    console.log(trackUrl)
     console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
     console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
     console.log("|||||||||||||||||||||||||||||||||||||||||||||||")
 
-    const transport = new BatchedTransport(1000, sendWithFetch("http://localhost:3001/v1/track"))
+    const transport = new BatchedTransport(1000, sendWithFetch(trackUrl))
     const client = new Causiq(transport);
     client.init(moniker, null, uniqueId)
 

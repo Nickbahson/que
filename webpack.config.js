@@ -1,4 +1,5 @@
 const path = require("path")
+const version = require('./package.json').version
 
 let mode = "development",
     source_map = "source-map"
@@ -21,7 +22,7 @@ module.exports = {
      * where [name] === entry[name]/entry[i] from above
      */
     output: {
-        filename: '[name].bundle.js',
+        filename: `[name].bundle.${version}.js`,
         path: path.resolve(__dirname, './dist'),
         clean: true,
     },
