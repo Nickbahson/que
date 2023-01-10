@@ -3,11 +3,8 @@ import { BatchedTransport, Causiq, sendWithFetch, _onClick } from '@causiq/sdk';
 (function (  ) {
     'use strict'
 
-    const cqid =
-        document.cookie.split(';').filter((item) => item.trim().startsWith('cqid='))[0]?.replace('cqid=', '')
-
     const uniqueId =
-        document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')
+        document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '') ?? false
 
     const srcUri = document.currentScript.src
     const url = new URL(srcUri);
@@ -17,13 +14,15 @@ import { BatchedTransport, Causiq, sendWithFetch, _onClick } from '@causiq/sdk';
 
     const transport = new BatchedTransport(1000, sendWithFetch(trackUrl))
     const client = new Causiq(transport);
-    client.init(moniker, null, uniqueId)
-    client._onClick(() => {
-        if ( uniqueId ) {
-            // When uniqueId is available, update the default id to that.
-            client.identify(uniqueId, cqid)
-        }
+    client.init(moniker, {
+        shouldCaptureText: function shouldCapture(el) {
+            if ( uniqueId && client.getIdentity() !== uniqueId ) {
+                client.identify(uniqueId)
+            }
+            return true
+        },
     })
+
 
 
 })()
