@@ -1,10 +1,10 @@
-import { BatchedTransport, Causiq, sendWithFetch, _onClick } from '@causiq/sdk';
+import { BatchedTransport, Causiq, sendWithFetch } from '@causiq/sdk';
 
 (function (  ) {
     'use strict'
 
     const uniqueId =
-        document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '') ?? false
+        document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')
 
     const srcUri = document.currentScript.src
     const url = new URL(srcUri);

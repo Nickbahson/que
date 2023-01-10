@@ -1,6 +1,6 @@
 {
   "name": "a_web",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A webpack project to demonstrate better FE performance and developer experience",
   "main": "index.js",
   "keywords": [
