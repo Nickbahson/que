@@ -1,4 +1,4 @@
-import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
+import { BatchedTransport, Causiq, sendWithFetch, _onClick } from '@causiq/sdk';
 
 (function (  ) {
     'use strict'
@@ -18,9 +18,12 @@ import { BatchedTransport, Causiq, sendWithFetch  } from '@causiq/sdk';
     const transport = new BatchedTransport(1000, sendWithFetch(trackUrl))
     const client = new Causiq(transport);
     client.init(moniker, null, uniqueId)
-    if ( uniqueId ) {
-        // When uniqueId is available, update the default id to that.
-        client.identify(uniqueId, cqid)
-    }
+    client._onClick(() => {
+        if ( uniqueId ) {
+            // When uniqueId is available, update the default id to that.
+            client.identify(uniqueId, cqid)
+        }
+    })
+
 
 })()
