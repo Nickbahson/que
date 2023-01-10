@@ -14,14 +14,17 @@ import { BatchedTransport, Causiq, sendWithFetch, _onClick } from '@causiq/sdk';
 
     const transport = new BatchedTransport(1000, sendWithFetch(trackUrl))
     const client = new Causiq(transport);
-    client.init(moniker, {
-        shouldCaptureText: function shouldCapture(el) {
+    client.init(
+        moniker,
+        { shouldCaptureText: function shouldCapture(el) {
             if ( uniqueId && client.getIdentity() !== uniqueId ) {
                 client.identify(uniqueId)
             }
             return true
+            }
         },
-    })
+        uniqueId
+    )
 
 
 
