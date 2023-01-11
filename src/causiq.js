@@ -4,7 +4,7 @@ import { BatchedTransport, Causiq, sendWithFetch } from '@causiq/sdk';
     'use strict'
 
     const uniqueId =
-        document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')
+        document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')?.trim()
 
     const srcUri = document.currentScript.src
     const url = new URL(srcUri);
