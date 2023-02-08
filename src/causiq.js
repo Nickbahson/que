@@ -3,7 +3,7 @@ import { BatchedTransport, Causiq, sendWithFetch } from '@causiq/sdk';
 (function (  ) {
     'use strict'
 
-    window.onload = (event) => {
+    const causiqInit = (event) => {
         try {
             const uniqueId =
                 document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')?.trim()
@@ -23,5 +23,5 @@ import { BatchedTransport, Causiq, sendWithFetch } from '@causiq/sdk';
         }
     };
 
-
+    window.addEventListener('load', causiqInit)
 })()
