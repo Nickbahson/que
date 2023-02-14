@@ -1,7 +1,7 @@
-'use strict'
 
 import { BatchedTransport, Causiq, sendWithFetch } from '@causiq/sdk';
-const causiqInit = (event) => {
+(function (  ){
+    'use strict'
     try {
         const uniqueId =
             document.cookie.split(';').filter((item) => item.trim().startsWith('cart='))[0]?.replace('cart=', '')?.trim()
@@ -19,6 +19,4 @@ const causiqInit = (event) => {
     } catch (e) {
 
     }
-};
-
-window.addEventListener('load', causiqInit)
+})()
